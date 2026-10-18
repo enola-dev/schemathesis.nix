@@ -7,7 +7,9 @@
     { nixpkgs, ... }:
     let
       supportedSystems = [
-        "x86_64-linux"
+        "x86_64-linux" # 64-bit Intel/AMD Linux
+        "aarch64-linux" # 64-bit ARM Linux
+        "aarch64-darwin" # 64-bit ARM macOS
       ];
       forEachSupportedSystem =
         f:
