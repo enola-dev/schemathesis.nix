@@ -6,43 +6,23 @@ It depends only on `nixpkgs`, ensuring that consumer repositories do not pull al
 
 ## Usage
 
-### 1. Running Locally (from cloned repository)
-
-- Check version:
-
-  ```bash
-  nix run . -- --version
-  ```
-
-- Run tests against an API schema:
-
-  ```bash
-  nix run . -- run https://example.com/openapi.json
-  ```
-
-- Enter an interactive shell with `schemathesis` in `PATH`:
-
-  ```bash
-  nix shell .
-  ```
-
-### 2. Running Remotely (from any directory or machine)
+### 1. Running Remotely (from any directory or machine)
 
 You can run or enter a shell with `schemathesis` directly from GitHub without cloning:
 
-- Run directly:
+Run directly:
 
-  ```bash
-  nix run "github:enola-dev/schemathesis.nix" -- --version
-  ```
+```bash
+nix run "github:enola-dev/schemathesis.nix" -- --version
+```
 
-- Interactive shell:
+Interactive shell:
 
-  ```bash
-  nix shell "github:enola-dev/schemathesis.nix"
-  ```
+```bash
+nix shell "github:enola-dev/schemathesis.nix"
+```
 
-### 3. Consuming in another `flake.nix`
+### 2. Consuming in another `flake.nix`
 
 Add this flake to your project's inputs:
 
@@ -69,4 +49,24 @@ Add this flake to your project's inputs:
       };
     };
 }
+```
+
+### 3. Running Locally (from cloned repository)
+
+Check version:
+
+```bash
+nix run . -- --version
+```
+
+Run tests against an API schema:
+
+```bash
+nix run . -- run https://example.com/openapi.json
+```
+
+Enter an interactive shell with `schemathesis` in `PATH`:
+
+```bash
+nix shell .
 ```
